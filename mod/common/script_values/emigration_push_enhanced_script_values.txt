@@ -2,7 +2,7 @@
 # (planet_carry_capacity_percent_used * 10)^2 * 0.8
 # this = planet
 emigration_push_enhanced = {
-	set = trigger:planet_carry_capacity_percent_used
+	set = value:planet_carry_capacity_percent_used
 	multiply = 10 # mutiply by 10 versus 0.1 because the value here is a decimal %, not the human-readable type
 	pow = 2
 	mult = 0.8
