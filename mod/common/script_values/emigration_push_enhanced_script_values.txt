@@ -8,16 +8,9 @@ emigration_push_enhanced = {
 	mult = 0.8
 }
 
-# 1 - planet_carry_capacity_percent_available (inverse)
-# this = planet
-planet_carry_capacity_percent_used = {
-	set = 1
-	subtract = value:planet_carry_capacity_percent_available
-}
-
 # num_pops / planet_carry_capacity_script_value
 # this = planet
-planet_carry_capacity_percent_available = {
+planet_carry_capacity_percent_used = {
 	set = trigger:num_pops
 	divide = value:planet_carry_capacity_script_value
 }
