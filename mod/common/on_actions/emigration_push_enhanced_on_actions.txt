@@ -1,0 +1,15 @@
+# fires for each colony every year (counting up from colonisation date, includes home planet)
+# this = planet
+on_colony_yearly_pulse = {
+	events = {
+		emigration_push_enhanced.1
+	}
+}
+
+# fires when a colony has been destroyed - called just before owner and controller are cleared
+# this = Planet
+on_colony_destroyed = {
+	events = {
+		emigration_push_enhanced.2
+	}
+}

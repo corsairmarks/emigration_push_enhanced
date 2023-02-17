@@ -1,0 +1,86 @@
+
+# (planet_carry_capacity_percent_used * 10)^2 * 0.8
+# this = planet
+emigration_push_enhanced = {
+	set = trigger:planet_carry_capacity_percent_used
+	multiply = 10 # mutiply by 10 versus 0.1 because the value here is a decimal %, not the human-readable type
+	pow = 2
+	mult = 0.8
+}
+
+# 1 - planet_carry_capacity_percent_available (inverse)
+# this = planet
+planet_carry_capacity_percent_used = {
+	# colony_age > 3 I think
+	set = 1
+	subtract = value:planet_carry_capacity_percent_available
+}
+
+# num_pops / planet_carry_capacity_script_value
+# this = planet
+planet_carry_capacity_percent_available = {
+	set = trigger:num_pops
+	divide = value:planet_carry_capacity_script_value
+}
+
+# does not seem to be a trigger for this in-game, so the calculation is reimplemented here as a script_value:
+# (free_district_slots * carry_cap_per_free_district) + num_housing + bonus capacity from modifiers
+# * carry_cap_per_free_district is per planet_class, with ideal worlds having high by default
+# * uses values from common/scripted_variables/00_scripted_variables.txt
+# * support for Planetary Diversity is based on its triggers for identifying different groups of planet classes
+# this = planet
+planet_carry_capacity_script_value = {
+	set = trigger:free_district_slots
+	modifier = {
+		OR = {
+			is_ideal = yes
+			is_planet_class = pc_ringworld_habitable
+			is_planetary_diversity_ringworld = yes
+			is_pd_gaia = yes
+			is_pd_arcology = yes
+			is_pd_hive_world = yes
+			is_pd_megaflora_hive = yes
+			is_pd_shroud_world = yes
+			is_pd_necro_world = yes
+			is_pd_wasteland = yes
+			is_pd_unique = yes
+		}
+		multiply = @carry_cap_high
+	}
+	modifier = {
+		is_ideal = no # high
+		is_pd_gaia = no # high
+		is_pd_arcology = no # high
+		is_pd_hive_world = no # high
+		is_pd_megaflora_hive = no # high
+		is_pd_shroud_world = no # low
+		is_pd_necro_world = no # high
+		is_pd_wasteland = no # high
+		is_pd_unique = no # high
+		NOR = {
+			is_planet_class = pc_ringworld_habitable # high
+			is_planet_class = pc_nuked # low
+			is_planet_class = pc_machine # low
+		}
+		is_pd_nuked = no # low
+		is_pd_machine = no # low
+		uses_habitat_capitals = no # low
+		is_pd_robot_arcology = no # low
+		is_pd_planetary_megaproject = no # low
+		multiply = @carry_cap_normal
+	}
+	modifier = {
+		OR = {
+			is_planet_class = pc_nuked
+			is_planet_class = pc_machine
+			is_pd_nuked = yes
+			is_pd_machine = yes
+			uses_habitat_capitals = yes
+			is_pd_robot_arcology = yes
+			is_pd_planetary_megaproject = yes
+		}
+		multiply = @carry_cap_low
+	}
+	add = trigger:num_housing
+	add = modifier:planet_carry_cap_add
+}

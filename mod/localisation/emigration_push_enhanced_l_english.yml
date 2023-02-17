@@ -1,0 +1,3 @@
+﻿l_english:
+ d_emigration_push_enhanced: "Dynamic $MOD_PLANET_EMIGRATION_PUSH_ADD$"
+ d_emigration_push_enhanced_desc: "The higher the usage of this planet's $MOD_PLANET_CARRY_CAP_ADD$ by its $POPS$, the higher its $MOD_PLANET_EMIGRATION_PUSH_ADD$."

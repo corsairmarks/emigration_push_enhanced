@@ -1,0 +1,13 @@
+d_emigration_push_enhanced = {
+	is_for_colonizable = yes
+	should_swap_deposit_on_terraforming = no
+	icon = d_tradestation_interior
+	category = deposit_cat_rare
+	potential = { always = no }
+	triggered_planet_modifier = {
+		potential = { colony_age >= 12 } # months, not years
+		planet_emigration_push_add = 1
+		mult = value:emigration_push_enhanced
+	}
+	drop_weight = { weight = 0 }
+}
