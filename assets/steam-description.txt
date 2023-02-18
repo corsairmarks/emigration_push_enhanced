@@ -23,7 +23,7 @@ This mod is intentionally not included in my modpack [url=https://steamcommunity
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194]More Standard Districts[/url] gives you more district types to employ your migrating Pops
 [/list]
 [h2]Changelog[/h2]
-See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2935067612]Change Notes[/url]
 
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/emigration_push_enhanced]GitHub[/url]
