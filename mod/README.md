@@ -1,30 +1,31 @@
 # Overview
 
-Summary
+The Stellaris immigration/emigration system (not automatic Pop resettlement) still exists and works well to redistribute population growth from planets experiencing emigration push to those with immigration pull.  However there aren't many sources of emigration push unless a planet is completely, intentionally mismanaged.  This mod intends to change that with a more aggressive emigration push based on the percentage of used planetary capacity, crime rate, and missing amenities.
+
+Suggested by [Omicron](https://steamcommunity.com/profiles/76561198024964069).
 
 # Changes
 
-Notes
+Adds a new planetary deposit to each colony one year after its foundation. This "Dynamic Emigration Push" deposit exists to boost emigration push from that colony based on a variety of factors. Each percentage point of crime increases emigration push by 1, and missing (negative) amenity increases emigration push by the same amount. Finally, the percentage of Planetary Capacity (mouseover planet size to see Planetary Capacity in a tooltip) that is being used heavily influences emigration push. The formula is `((Pops ÷ Capacity) × 10)² × 0.8` which ultimately is a parabolic function.
 
 ## Compatibility
 
-Notes
+All functionality is implemented by custom script - no Stellaris files are replaced and no script is overwritten. This mod should generally not conflict with other mod.
+
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ### When to Install
 
-Notes
+This mod can be added before or during a game. The new colony emigration deposits are added to each colony on the anniversary of its foundation. It is not recommended to remove this mod during a game; however, Stellaris usually handles missing deposits by removing them and continuing without problems. Always back up your savegame before trying to remove a mod, even this one.
+
+### Not Included in "Subtle Polish"
+
+This mod is intentionally not included in my modpack [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) because it is experimental.  It is otherwise fully compatible.
 
 ### Recommended Companion Mods
 
-* List
-
-## Known Issues
-
-Overriding XXX causes the game to log errors noting the overrides.  Expect to see XXX lines in the error.log file like these:
-
-```
-Error Logs
-```
+* [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) is a large collection my other enhancements for Stellaris; as the name suggests, most are improvements or additions to the basic Stellaris experience
+* [More Standard Districts](https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194) gives you more district types to employ your migrating Pops
 
 ## Changelog
 
