@@ -10,7 +10,7 @@ Adds a new planetary deposit to each colony one year after its foundation. This 
 
 ## Compatibility
 
-All functionality is implemented by custom script - no Stellaris files are replaced and no script is overwritten. This mod should generally not conflict with other mod.
+All functionality is implemented by custom script - no Stellaris files are replaced and no script is overwritten. This mod should generally not conflict with other mod.  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
