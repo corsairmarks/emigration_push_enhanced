@@ -6,7 +6,13 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	pre_triggers = { has_owner = yes }
-	trigger = { NOT = { has_deposit = d_emigration_push_enhanced } }
+	trigger = {
+		OR = {
+			colony_age >= 60 # months -> 5 years
+			num_pops >= 10
+		}
+		NOT = { has_deposit = d_emigration_push_enhanced }
+	}
 	immediate = { add_deposit = d_emigration_push_enhanced }
 }
 

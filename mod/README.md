@@ -6,7 +6,7 @@ Suggested by [Omicron](https://steamcommunity.com/profiles/76561198024964069).
 
 # Changes
 
-Adds a new planetary deposit to each colony one year after its foundation. This "Dynamic Emigration Push" deposit exists to boost emigration push from that colony based on a variety of factors. Each percentage point of crime increases emigration push by 1, and missing (negative) amenity increases emigration push by the same amount. Finally, the percentage of Planetary Capacity (mouseover planet size to see Planetary Capacity in a tooltip) that is being used heavily influences emigration push. The formula is `((Pops ÷ Capacity) × 10)² × 0.8` which ultimately is a parabolic function.
+Adds a new planetary deposit to each colony five years after its founding, or sooner if the colony has ten or more Pops on the anniversary of its founding. This "Dynamic Emigration Push" deposit exists to boost emigration push from that colony based on a variety of factors. Each percentage point of crime increases emigration push by 1, and missing (negative) amenity increases emigration push by the same amount. Finally, the percentage of Planetary Capacity (mouseover planet size to see Planetary Capacity in a tooltip) that is being used heavily influences emigration push. The formula is `((Pops ÷ Capacity) × 10)² × 0.8` which ultimately is a parabolic function.
 
 ## Compatibility
 
