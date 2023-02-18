@@ -5,7 +5,12 @@ d_emigration_push_enhanced = {
 	category = deposit_cat_rare
 	potential = { always = no }
 	triggered_planet_modifier = {
-		potential = { colony_age >= 12 } # months, not years
+		potential = {
+			OR = {
+				colony_age >= 12 # months, not years
+				num_pops >= 10
+			}
+		}
 		planet_emigration_push_add = 1
 		mult = value:emigration_push_enhanced
 	}
