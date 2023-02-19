@@ -1,13 +1,25 @@
 # result is stored in a planet-scoped variable "pop_habitability_weighted_average"
 # this = planet
 calculate_planet_migration_percentage_from_habitability = {
-	optimize_memory
+	# optimize_memory
 	set_variable = {
 		which = pop_habitability_weighted_average
 		value = 0
 	}
+	set_variable = {
+		which = pop_species_habitability
+		value = 0
+	}
+	set_variable = {
+		which = pop_species_habitability_inverse
+		value = 0
+	}
 	every_owned_pop = {
 		prev = {
+			set_variable = {
+				which = pop_species_habitability
+				value = 0
+			}
 			export_trigger_value_to_variable = {
 				trigger = habitability
 				parameters = { who = prev }
@@ -25,12 +37,12 @@ calculate_planet_migration_percentage_from_habitability = {
 				which = pop_habitability_weighted_average
 				value = pop_species_habitability_inverse
 			}
-			clear_variable = pop_species_habitability
-			clear_variable = pop_species_habitability_inverse
 		}
 	}
 	divide_variable = {
 		which = pop_habitability_weighted_average
 		value = trigger:num_pops
 	}
+	clear_variable = pop_species_habitability
+	clear_variable = pop_species_habitability_inverse
 }
