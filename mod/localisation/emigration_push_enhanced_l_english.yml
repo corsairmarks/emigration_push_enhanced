@@ -1,3 +1,3 @@
 ﻿l_english:
- d_emigration_push_enhanced: "Dynamic $MOD_PLANET_EMIGRATION_PUSH_ADD$"
- d_emigration_push_enhanced_desc: "The higher the usage of this planet's $MOD_PLANET_CARRY_CAP_ADD$ by its $POPS$, the higher its $MOD_PLANET_EMIGRATION_PUSH_ADD$."
+ d_emigration_push_enhanced: "Dynamic $PLANET_MIGRATION_TITLE$"
+ d_emigration_push_enhanced_desc: "£mod_planet_immigration_pull_mult£ §Y$MOD_PLANET_IMMIGRATION_PULL_MULT$§! is §Rreduced§! by a percentage inversely proportionate to the weighted average £mod_habitability£ §Y$HABITABILITY$§! of all Pops currently on the planet.\n\n£mod_planet_emigration_push_add£ §Y$MOD_PLANET_EMIGRATION_PUSH_ADD$§! is §Rincreased§! proportionately to £mod_planet_crime_add£ §Y$PLANET_CRIME_TITLE$§!/£mod_planet_crime_no_happiness_add£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and inversely to £mod_pop_amenities_usage_base£ §Y$MOD_POP_AMENITIES_USAGE_BASE$§! as well as §Rincreased§! proportionately to the £mod_planet_carry_cap_add£ §Y$MOD_PLANET_CARRY_CAP_ADD$§! utilized by its $POPS$."
