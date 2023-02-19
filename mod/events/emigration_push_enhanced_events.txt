@@ -1,6 +1,7 @@
 namespace = emigration_push_enhanced
 
-# setup on_colony_yearly_pulse (intentionally delayed a year because automatic migration is disabled for brand-new colonies)
+# triggered by on_colony_yearly_pulse
+# setup deposit (intentionally delayed five years because automatic resettlement is disabled for brand-new colonies)
 planet_event = {
 	id = emigration_push_enhanced.1
 	is_triggered_only = yes
@@ -13,17 +14,29 @@ planet_event = {
 		}
 		NOT = { has_deposit = d_emigration_push_enhanced }
 	}
-	immediate = { add_deposit = d_emigration_push_enhanced }
+	immediate = {
+		calculate_planet_migration_percentage_from_habitability = yes
+		add_deposit = d_emigration_push_enhanced
+	}
 }
 
-# cleanup on_colony_destroyed
+# triggered by on_colony_destroyed
+# cleanup
 planet_event = {
 	id = emigration_push_enhanced.2
 	is_triggered_only = yes
 	hide_window = yes
 	pre_triggers = { has_owner = yes }
-	trigger = { has_deposit = d_emigration_push_enhanced }
-	immediate = { remove_deposit = d_emigration_push_enhanced }
+	immediate = {
+		if = {
+			limit = { has_deposit = d_emigration_push_enhanced }
+			remove_deposit = d_emigration_push_enhanced
+		}
+		if = {
+			limit = { is_variable_set = pop_habitability_weighted_average }
+			clear_variable = pop_habitability_weighted_average
+		}
+	}
 }
 
 # test event to ensure every colony has the relevant modifier
@@ -37,7 +50,46 @@ event = {
 				is_colony = yes
 				NOT = { has_deposit = d_emigration_push_enhanced }
 			}
+			calculate_planet_migration_percentage_from_habitability = yes
 			add_deposit = d_emigration_push_enhanced
 		}
 	}
+}
+
+# triggered by on_colony_yearly_pulse
+# variable setup
+planet_event = {
+	id = emigration_push_enhanced.4
+	is_triggered_only = yes
+	hide_window = yes
+	pre_triggers = { has_owner = yes }
+	trigger = { has_deposit = d_emigration_push_enhanced }
+	immediate = { calculate_planet_migration_percentage_from_habitability = yes }
+}
+
+# triggered by on_pop_resettled/on_pop_added/on_pop_abducted
+# root = pop
+# from = planet (note for on_pop_resettled - the previous planet)
+pop_event = {
+	id = emigration_push_enhanced.5
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		exists = from
+		from = { has_deposit = d_emigration_push_enhanced }
+	}
+	immediate = { from = { calculate_planet_migration_percentage_from_habitability = yes } }
+}
+
+# triggered by on_pop_grown/on_pop_assembled/on_pop_purged/on_pop_declined/on_pop_displaced
+# root = planet
+# from = country
+# fromfrom = pop
+planet_event = {
+	id = emigration_push_enhanced.6
+	is_triggered_only = yes
+	hide_window = yes
+	pre_triggers = { has_owner = yes }
+	trigger = { has_deposit = d_emigration_push_enhanced }
+	immediate = { calculate_planet_migration_percentage_from_habitability = yes }
 }

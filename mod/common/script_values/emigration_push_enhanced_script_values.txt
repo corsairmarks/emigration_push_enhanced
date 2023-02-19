@@ -12,7 +12,15 @@ emigration_push_enhanced = {
 		free_amenities < 0
 		subtract = trigger:free_amenities # subtracting a negative adds its absolute value to the total
 	}
-	# +push for poor habitability - avg weighted by Pop % - separate script_value
+}
+
+immigration_pull_percentage_enhanced = {
+	base = 0
+	modifier = {
+		# variable set by effect calculate_planet_emigration_push_from_habitability, which in turn fires yearly and also when Pops are added/removed from a colony
+		is_variable_set = pop_habitability_weighted_average
+		add = pop_habitability_weighted_average
+	}
 }
 
 # does not seem to be a trigger for this in-game, so the calculation is reimplemented here as a script_value:

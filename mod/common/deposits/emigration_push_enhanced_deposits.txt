@@ -6,6 +6,11 @@ d_emigration_push_enhanced = {
 	potential = { always = no }
 	triggered_planet_modifier = {
 		potential = { always = yes }
+		planet_immigration_pull_mult = 1
+		mult = value:immigration_pull_enhanced
+	}
+	triggered_planet_modifier = {
+		potential = { always = yes }
 		planet_emigration_push_add = 1
 		mult = value:emigration_push_enhanced
 	}
