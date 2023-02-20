@@ -2,7 +2,7 @@
 # this = planet
 on_colony_yearly_pulse = {
 	events = {
-		emigration_push_enhanced.4 # must come before .1
+		# emigration_push_enhanced.4 # must come before .1 if using value:immigration_pull_percentage_enhanced_pop_species_average
 		emigration_push_enhanced.1
 	}
 }
@@ -15,80 +15,81 @@ on_colony_destroyed = {
 	}
 }
 
-# fires when a pop is abducted by raiding stance
-# this = pop scope
-# from = planet abducted from
-on_pop_abducted = {
-	events = {
-		emigration_push_enhanced.5
-	}
-}
+# use these on_actions if using value:immigration_pull_percentage_enhanced_pop_species_average
+# # fires when a pop is abducted by raiding stance
+# # this = pop scope
+# # from = planet abducted from
+# on_pop_abducted = {
+# 	events = {
+# 		emigration_push_enhanced.5
+# 	}
+# }
 
-# fires when a pop is resettled
-# from is previous planet
-# planet = { } is new planet
-on_pop_resettled = {
-	events = {
-		emigration_push_enhanced.5
-	}
-}
+# # fires when a pop is resettled
+# # from is previous planet
+# # planet = { } is new planet
+# on_pop_resettled = {
+# 	events = {
+# 		emigration_push_enhanced.5
+# 	}
+# }
 
-# fires when a pop has been added to the planet
-# root = pop
-# from = planet
-on_pop_added = {
-	events = {
-		emigration_push_enhanced.5
-	}
-}
+# # fires when a pop has been added to the planet
+# # root = pop
+# # from = planet
+# on_pop_added = {
+# 	events = {
+# 		emigration_push_enhanced.5
+# 	}
+# }
 
-# fires when pop has finished growing
-# this = planet scope
-# from = country
-# fromfrom = pop
-on_pop_grown = {
-	events = {
-		emigration_push_enhanced.6
-	}
-}
+# # fires when pop has finished growing
+# # this = planet scope
+# # from = country
+# # fromfrom = pop
+# on_pop_grown = {
+# 	events = {
+# 		emigration_push_enhanced.6
+# 	}
+# }
 
-# fires when a pop has finished assembling
-# this = planet scope
-# from = country
-# fromfrom = pop
-on_pop_assembled = {
-	events = {
-		emigration_push_enhanced.6
-	}
-}
+# # fires when a pop has finished assembling
+# # this = planet scope
+# # from = country
+# # fromfrom = pop
+# on_pop_assembled = {
+# 	events = {
+# 		emigration_push_enhanced.6
+# 	}
+# }
 
-# fires when a pop has finished purging (not displacement)
-# this = planet scope
-# from = country
-# fromfrom = pop
-on_pop_purged = {
-	events = {
-		emigration_push_enhanced.6
-	}
-}
+# # fires when a pop has finished purging (not displacement)
+# # this = planet scope
+# # from = country
+# # fromfrom = pop
+# on_pop_purged = {
+# 	events = {
+# 		emigration_push_enhanced.6
+# 	}
+# }
 
-# fires when a pop has finished declining (while not being purged)
-# this = planet scope
-# from = country
-# fromfrom = pop
-on_pop_declined = {
-	events = {
-		emigration_push_enhanced.6
-	}
-}
+# # fires when a pop has finished declining (while not being purged)
+# # this = planet scope
+# # from = country
+# # fromfrom = pop
+# on_pop_declined = {
+# 	events = {
+# 		emigration_push_enhanced.6
+# 	}
+# }
 
 
-# fires when a pop has been displaced
-# this = planet scope
-# from = country
-# fromfrom = pop
-on_pop_displaced = {
-	events = {
-		emigration_push_enhanced.6
-	}
-}
+# # fires when a pop has been displaced
+# # this = planet scope
+# # from = country
+# # fromfrom = pop
+# on_pop_displaced = {
+# 	events = {
+# 		emigration_push_enhanced.6
+# 	}
+# }

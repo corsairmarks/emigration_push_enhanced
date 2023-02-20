@@ -15,7 +15,7 @@ planet_event = {
 		NOT = { has_deposit = d_emigration_push_enhanced }
 	}
 	immediate = {
-		calculate_planet_migration_percentage_from_habitability = yes
+		# calculate_planet_migration_percentage_from_habitability = yes # use this effect if using value:immigration_pull_percentage_enhanced_pop_species_average
 		add_deposit = d_emigration_push_enhanced
 	}
 }
@@ -50,7 +50,7 @@ event = {
 				is_colony = yes
 				NOT = { has_deposit = d_emigration_push_enhanced }
 			}
-			calculate_planet_migration_percentage_from_habitability = yes
+			calculate_planet_migration_percentage_from_habitability = yes # test event performs the calculation always
 			add_deposit = d_emigration_push_enhanced
 		}
 	}

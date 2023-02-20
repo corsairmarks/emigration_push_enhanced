@@ -15,6 +15,17 @@ emigration_push_enhanced = {
 }
 
 # this = planet
+immigration_pull_percentage_enhanced_growing_species = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = habitability
+		trigger_scope = this
+		parameters = { who = growing_species }
+		mode = subtract
+	}
+}
+
+# this = planet
 immigration_pull_percentage_enhanced_pop_species_average = {
 	base = 1
 	modifier = {
