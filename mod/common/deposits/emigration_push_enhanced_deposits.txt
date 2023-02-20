@@ -5,7 +5,13 @@ d_emigration_push_enhanced = {
 	category = deposit_cat_rare
 	potential = { always = no }
 	triggered_planet_modifier = {
-		potential = { always = yes }
+		potential = {
+			is_variable_set = pop_habitability_weighted_average
+			check_variable = {
+				which = pop_habitability_weighted_average
+				value > 0
+			}
+		}
 		planet_immigration_pull_mult = -1
 		mult = value:immigration_pull_percentage_enhanced
 	}
