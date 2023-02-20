@@ -17,7 +17,7 @@ emigration_push_enhanced = {
 immigration_pull_percentage_enhanced = {
 	base = 0
 	modifier = {
-		# variable set by effect calculate_planet_emigration_push_from_habitability, which in turn fires yearly and also when Pops are added/removed from a colony
+		# variable set by effect calculate_planet_migration_percentage_from_habitability, which in turn fires yearly and also when Pops are added/removed from a colony
 		is_variable_set = pop_habitability_weighted_average
 		add = pop_habitability_weighted_average
 	}
