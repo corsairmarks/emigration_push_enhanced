@@ -6,7 +6,11 @@ Suggested by [Omicron](https://steamcommunity.com/profiles/76561198024964069).
 
 # Changes
 
-Adds a new planetary deposit to each colony five years after its founding, or sooner if the colony has ten or more Pops on the anniversary of its founding. This "Dynamic Emigration Push" deposit exists to boost emigration push from that colony based on a variety of factors. Each percentage point of crime increases emigration push by 1, and missing (negative) amenity increases emigration push by the same amount. Finally, the percentage of Planetary Capacity (mouseover planet size to see Planetary Capacity in a tooltip) that is being used heavily influences emigration push. The formula is `((Pops ÷ Capacity) × 10)² × 0.8` which ultimately is a parabolic function.
+Adds a new planetary deposit to each colony five years after its founding, or sooner if the colony has ten or more Pops on the anniversary of its founding. This "Dynamic Migration" deposit exists to reduce immigration pull and boost emigration push based to/from that colony based on a variety of factors.
+
+Emigration push is increased one point for each percentage point of crime and missing (negative) amenities increase emigration push by the same amount. Finally, the percentage of Planetary Capacity (mouseover planet size to see Planetary Capacity in a tooltip) that is being used heavily increases emigration push. The formula is `((Pops ÷ Capacity) × 10)² × 0.8` which ultimately is a parabolic function.
+
+Immigration pull for a planet is also modified - it is reduced inversely proportional to the habitability that the currently-growing species has on the planet.  Immigration works by adding population growth to the currently-growing Pop, so only the habitability of its species is considered.
 
 ## Compatibility
 
@@ -30,6 +34,7 @@ This mod is intentionally not included in my modpack [Subtle Polish: A Collectio
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Reduce immigration pull on planets by a percentage inversely proportional to the habitability of the growing species on that planet
 
 ## Source Code
 
