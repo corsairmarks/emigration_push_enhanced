@@ -1,35 +1,49 @@
 # result is stored in a planet-scoped variable "pop_habitability_weighted_average"
+# uses event_targets to avoid copious error logs and incorrect calculations
 # this = planet
 calculate_planet_migration_percentage_from_habitability = {
 	optimize_memory
+	save_event_target_as = migration_planet
 	set_variable = {
 		which = pop_habitability_weighted_average
 		value = 0
 	}
-	every_owned_pop = {
-		planet = {
+	every_owned_species = {
+		limit = {
+			NOR = {
+				has_citizenship_type = {
+					type = citizenship_purge
+					country = prev
+				}
+				has_citizenship_type = {
+					type = citizenship_purge_machine
+					country = prev
+				}
+			}
+		}
+		save_event_target_as = migration_planet_species
+		event_target:migration_planet = {
 			export_trigger_value_to_variable = {
 				trigger = habitability
-				parameters = { who = prev }
-				variable = pop_species_habitability
+				parameters = { who = event_target:migration_planet_species }
+				variable = species_habitability
 			}
-		}
-		set_variable = {
-			which = pop_species_habitability_inverse
-			value = 1
-		}
-		subtract_variable = {
-			which = pop_species_habitability_inverse
-			value = planet.pop_species_habitability
-		}
-		planet = {
+			export_trigger_value_to_variable = {
+				trigger = count_owned_pop
+				parameters = { limit = { is_exact_same_species = event_target:migration_planet_species } }
+				variable = species_count_pop
+			}
+			multiply_variable = {
+				which = species_habitability
+				value = species_count_pop
+			}
 			change_variable = {
 				which = pop_habitability_weighted_average
-				value = prev.pop_species_habitability_inverse
+				value = species_habitability
 			}
-			clear_variable = pop_species_habitability
+			clear_variable = species_habitability
+			clear_variable = species_count_pop
 		}
-		clear_variable = pop_species_habitability_inverse
 	}
 	divide_variable = {
 		which = pop_habitability_weighted_average

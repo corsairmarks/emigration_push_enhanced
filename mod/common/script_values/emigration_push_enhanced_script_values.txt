@@ -14,12 +14,17 @@ emigration_push_enhanced = {
 	}
 }
 
-immigration_pull_percentage_enhanced = {
-	base = 0
+# this = planet
+immigration_pull_percentage_enhanced_pop_species_average = {
+	base = 1
 	modifier = {
 		# variable set by effect calculate_planet_migration_percentage_from_habitability, which in turn fires yearly and also when Pops are added/removed from a colony
 		is_variable_set = pop_habitability_weighted_average
-		add = pop_habitability_weighted_average
+		subtract = pop_habitability_weighted_average
+	}
+	modifier = {
+		NOT = { is_variable_set = pop_habitability_weighted_average }
+		multiply = 0
 	}
 }
 

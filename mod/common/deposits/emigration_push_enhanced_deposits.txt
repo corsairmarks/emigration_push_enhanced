@@ -9,11 +9,11 @@ d_emigration_push_enhanced = {
 			is_variable_set = pop_habitability_weighted_average
 			check_variable = {
 				which = pop_habitability_weighted_average
-				value > 0
+				value < 1
 			}
 		}
 		planet_immigration_pull_mult = -1
-		mult = value:immigration_pull_percentage_enhanced
+		mult = value:immigration_pull_percentage_enhanced_pop_species_average
 	}
 	triggered_planet_modifier = {
 		potential = { always = yes }
