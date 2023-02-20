@@ -19,6 +19,11 @@ d_emigration_push_enhanced = {
 		mult = value:immigration_pull_percentage_enhanced_growing_species
 	}
 	triggered_planet_modifier = {
+		potential = { planet_crime > 0 }
+		planet_emigration_push_mult = 1
+		mult = value:emigration_push_percentage_enhanced_planet_crime
+	}
+	triggered_planet_modifier = {
 		potential = { always = yes }
 		planet_emigration_push_add = 1
 		mult = value:emigration_push_enhanced

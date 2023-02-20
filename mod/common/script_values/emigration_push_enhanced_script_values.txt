@@ -7,11 +7,16 @@ emigration_push_enhanced = {
 	multiply = 10 # mutiply by 10 versus 0.1 because the value here is a decimal %, not the human-readable type
 	pow = 2
 	mult = 0.8
-	add = trigger:planet_crime # original proposal was for a %, but this makes the impact higher even for low crime (less than 20%)
 	modifier = {
 		free_amenities < 0
 		subtract = trigger:free_amenities # subtracting a negative adds its absolute value to the total
 	}
+}
+
+# this = planet
+emigration_push_percentage_enhanced_planet_crime = {
+	set = trigger:planet_crime
+	multiply = 0.01 # convert to a percentage
 }
 
 # this = planet
