@@ -13,7 +13,7 @@ Immigration pull for a planet is also modified - it is reduced inversely proport
 [h2]Compatibility[/h2]
 All functionality is implemented by custom script - no Stellaris files are replaced and no script is overwritten. This mod should generally not conflict with other mod. This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
 
-Built for Stellaris version 3.6 "Orion."Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod can be added before or during a game. The new colony emigration deposits are added to each colony on the anniversary of its foundation. It is not recommended to remove this mod during a game; however, Stellaris usually handles missing deposits by removing them and continuing without problems. Always back up your savegame before trying to remove a mod, even this one.
