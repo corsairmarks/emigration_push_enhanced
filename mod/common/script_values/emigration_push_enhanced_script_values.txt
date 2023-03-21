@@ -2,7 +2,8 @@
 # ((num_pops / planet_carry_capacity_script_value) * 10)^2 * 0.8
 # this = planet
 emigration_push_enhanced = {
-	set = trigger:num_pops
+	base = 0
+	add = trigger:num_pops
 	divide = value:planet_carry_capacity_script_value
 	multiply = 10 # mutiply by 10 versus 0.1 because the value here is a decimal %, not the human-readable type
 	pow = 2
@@ -15,7 +16,8 @@ emigration_push_enhanced = {
 
 # this = planet
 emigration_push_percentage_enhanced_planet_crime = {
-	set = trigger:planet_crime
+	base = 0
+	add = trigger:planet_crime
 	multiply = 0.01 # convert to a percentage
 }
 
@@ -51,7 +53,8 @@ immigration_pull_percentage_enhanced_pop_species_average = {
 # * support for Planetary Diversity is based on its triggers for identifying different groups of planet classes
 # this = planet
 planet_carry_capacity_script_value = {
-	set = trigger:free_district_slots
+	base = 0
+	add = trigger:free_district_slots
 	modifier = {
 		OR = {
 			is_ideal = yes
