@@ -62,6 +62,12 @@ is_pd_hive_world = {
 }
 
 # this = planet
+is_pd_hive_arcology = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
 is_pd_wasteland = {
 	optimize_memory
 	always = no
