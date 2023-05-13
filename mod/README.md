@@ -16,7 +16,7 @@ Immigration pull for a planet is also modified - it is reduced inversely proport
 
 All functionality is implemented by custom script - no Stellaris files are replaced and no script is overwritten. This mod should generally not conflict with other mod.  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 ### When to Install
 
@@ -38,6 +38,7 @@ This mod is intentionally not included in my modpack [Subtle Polish: A Collectio
 * 1.2.0 Convert the crime emigration push into a % increase instead of points-based, improve deposit tooltip
 * 1.3.0 Mark as compatible for Stellaris 3.7 "Canis Minor" - no functionality changes
     * Properly support Planetary Diversity hive arcologies
+* 1.4.0 Mark as compatible for Stellaris 3.8 "Gemini" - no script changes
 
 ## Source Code
 
