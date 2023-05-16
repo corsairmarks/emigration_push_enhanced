@@ -36,9 +36,9 @@ This mod is intentionally not included in my modpack [Subtle Polish: A Collectio
 * 1.0.0 Initial version
 * 1.1.0 Reduce immigration pull on planets by a percentage inversely proportional to the habitability of the growing species on that planet
 * 1.2.0 Convert the crime emigration push into a % increase instead of points-based, improve deposit tooltip
-* 1.3.0 Mark as compatible for Stellaris 3.7 "Canis Minor" - no functionality changes
+* 1.3.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no functionality changes
     * Properly support Planetary Diversity hive arcologies
-* 1.4.0 Mark as compatible for Stellaris 3.8 "Gemini" - no script changes
+* 1.4.0 Mark as compatible with Stellaris version 3.8 "Gemini" - no script changes
 
 ## Source Code
 
